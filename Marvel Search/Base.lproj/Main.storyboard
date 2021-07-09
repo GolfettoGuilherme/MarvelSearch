@@ -1,24 +1,120 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="56d-PM-Arb">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Marvel Hero Search-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="Marvel Hero Search" id="BYZ-38-t0r" customClass="ViewController" customModule="Marvel_Search" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" xcode11CocoaTouchSystemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="JOS-du-ABe">
+                                <rect key="frame" x="0.0" y="88" width="414" height="774"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="CelulaHeroi" id="tNi-er-bei" customClass="HeroTableViewCell" customModule="Marvel_Search" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="24.5" width="414" height="96.5"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="tNi-er-bei" id="nQK-Ws-nb8">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="96.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="hDr-me-rB3">
+                                                    <rect key="frame" x="20" y="20" width="56" height="56.5"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="56" id="bxB-5f-VSS"/>
+                                                        <constraint firstAttribute="height" constant="56" id="tXr-5T-4Kw"/>
+                                                    </constraints>
+                                                </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Homem de Ferro" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GQe-Wh-tb9">
+                                                    <rect key="frame" x="84" y="37" width="290" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="hDr-me-rB3" firstAttribute="leading" secondItem="nQK-Ws-nb8" secondAttribute="leading" constant="20" symbolic="YES" id="CTZ-9M-v3u"/>
+                                                <constraint firstAttribute="bottom" secondItem="hDr-me-rB3" secondAttribute="bottom" constant="20" symbolic="YES" id="P12-4G-FRG"/>
+                                                <constraint firstItem="GQe-Wh-tb9" firstAttribute="top" secondItem="nQK-Ws-nb8" secondAttribute="topMargin" constant="26" id="TKR-Di-8RV"/>
+                                                <constraint firstItem="hDr-me-rB3" firstAttribute="top" secondItem="nQK-Ws-nb8" secondAttribute="top" constant="20" symbolic="YES" id="UnH-LA-flQ"/>
+                                                <constraint firstItem="GQe-Wh-tb9" firstAttribute="leading" secondItem="hDr-me-rB3" secondAttribute="trailing" constant="8" symbolic="YES" id="c6f-zU-BXe"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="GQe-Wh-tb9" secondAttribute="trailing" constant="20" id="oWS-zU-OvN"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="imgHeroPic" destination="hDr-me-rB3" id="Aw4-C4-iAM"/>
+                                            <outlet property="lblHeroName" destination="GQe-Wh-tb9" id="ju0-xt-Whn"/>
+                                            <segue destination="cu0-cV-ia5" kind="show" identifier="showInfo" id="gAt-6b-wnm"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="JOS-du-ABe" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="IcF-Iy-m9C"/>
+                            <constraint firstItem="JOS-du-ABe" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="WeW-pT-qnc"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="JOS-du-ABe" secondAttribute="bottom" id="c0J-WZ-f4b"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="JOS-du-ABe" secondAttribute="trailing" id="tNC-kx-naJ"/>
+                        </constraints>
                     </view>
+                    <navigationItem key="navigationItem" title="Marvel Hero Search" id="YcG-LP-WCO"/>
+                    <connections>
+                        <outlet property="tbvHeros" destination="JOS-du-ABe" id="Jwq-AB-0ZQ"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="657" y="151"/>
+        </scene>
+        <!--Hero Detail View Controller-->
+        <scene sceneID="nxa-yb-9e8">
+            <objects>
+                <viewController id="cu0-cV-ia5" customClass="HeroDetailViewController" customModule="Marvel_Search" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="hlS-ay-Guq">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="1JJ-zS-V1t"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="OSJ-nW-1tN">
+                        <barButtonItem key="backBarButtonItem" title="Voltar" id="Rwq-Wf-NRa"/>
+                    </navigationItem>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="2nw-wb-BAL" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1617" y="151"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="uKB-Yf-SN7">
+            <objects>
+                <navigationController id="56d-PM-Arb" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" largeTitles="YES" id="lbZ-CK-Hnq">
+                        <rect key="frame" x="0.0" y="44" width="414" height="96"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="kD1-CL-lrq"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Fd8-me-Mz3" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-235" y="151"/>
         </scene>
     </scenes>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
 </document>
