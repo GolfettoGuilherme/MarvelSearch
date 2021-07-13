@@ -25,13 +25,7 @@ class HeroTableViewCell: UITableViewCell {
     func setCell(hero: Hero) {
         lblHeroName.text = hero.name
         
-        var urlFormatada = hero.thumbnail
-        
-        if urlFormatada.hasPrefix("http://") {
-            urlFormatada = urlFormatada.replacingOccurrences(of: "http:", with: "https:")
-        }
-        
-        guard let imageUrl = URL(string: urlFormatada) else { return }
+        guard let imageUrl = hero.getURLforThumbnail() else { return }
         imgHeroPic.af.setImage(withURL: imageUrl)
     }
 

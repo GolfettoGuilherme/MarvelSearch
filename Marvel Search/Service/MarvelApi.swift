@@ -36,11 +36,33 @@ struct MarvelApi {
             let thumbExt = thumbData.ext ?? "jpg"
             let thumb =  thumbPath + "." + thumbExt
             
-            herois.append(Hero(thumbnail: thumb, name: name))
+            let heroDescription = personagem.description ?? ""
+            
+            let hero = Hero(thumbnail: thumb, name: name, heroDescription: heroDescription)
+            
+            if let comicList = personagem.comics {
+                if let comicSumarry = comicList.items {
+                    for comic in comicSumarry {
+                        hero.comicList.append(comic)
+                    }
+                }
+            }
+            
+            if let serieList = personagem.series {
+                if let serieSumarry = serieList.items {
+                    for serie in serieSumarry {
+                        hero.serieList.append(serie)
+                    }
+                }
+            }
+            
+            herois.append(hero)
         }
         
         return herois
     }
+    
+    
     
 }
 
