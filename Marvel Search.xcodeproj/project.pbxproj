@@ -26,6 +26,7 @@
 		0E422CF92697BCBB00804543 /* fundo.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 0E422CF82697BCBB00804543 /* fundo.jpg */; };
 		0E422CFF2697C74500804543 /* MarvelApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E422CFE2697C74500804543 /* MarvelApi.swift */; };
 		0E960163269D350F003D30DB /* ComicsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E960162269D350F003D30DB /* ComicsTableViewCell.swift */; };
+		0E960165269E6570003D30DB /* HeroCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E960164269E6570003D30DB /* HeroCollectionViewCell.swift */; };
 		0ED626312697CE43002F3C26 /* Alamofire.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0ED6262F2697CE43002F3C26 /* Alamofire.xcframework */; };
 		0ED626322697CE43002F3C26 /* Alamofire.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 0ED6262F2697CE43002F3C26 /* Alamofire.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		0ED626332697CE43002F3C26 /* AlamofireImage.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0ED626302697CE43002F3C26 /* AlamofireImage.xcframework */; };
@@ -91,6 +92,7 @@
 		0E422CF82697BCBB00804543 /* fundo.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = fundo.jpg; sourceTree = "<group>"; };
 		0E422CFE2697C74500804543 /* MarvelApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarvelApi.swift; sourceTree = "<group>"; };
 		0E960162269D350F003D30DB /* ComicsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComicsTableViewCell.swift; sourceTree = "<group>"; };
+		0E960164269E6570003D30DB /* HeroCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeroCollectionViewCell.swift; sourceTree = "<group>"; };
 		0ED6262F2697CE43002F3C26 /* Alamofire.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = Alamofire.xcframework; path = Carthage/Build/Alamofire.xcframework; sourceTree = "<group>"; };
 		0ED626302697CE43002F3C26 /* AlamofireImage.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = AlamofireImage.xcframework; path = Carthage/Build/AlamofireImage.xcframework; sourceTree = "<group>"; };
 		0ED626382697DB73002F3C26 /* CharacterResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterResponse.swift; sourceTree = "<group>"; };
@@ -232,6 +234,7 @@
 			isa = PBXGroup;
 			children = (
 				0E422CE52697989600804543 /* HeroTableViewCell.swift */,
+				0E960164269E6570003D30DB /* HeroCollectionViewCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -414,6 +417,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0E960165269E6570003D30DB /* HeroCollectionViewCell.swift in Sources */,
 				0E422CFF2697C74500804543 /* MarvelApi.swift in Sources */,
 				0E422CE826979C1F00804543 /* Hero.swift in Sources */,
 				0E422CB42697905000804543 /* ViewController.swift in Sources */,

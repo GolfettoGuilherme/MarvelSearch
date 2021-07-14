@@ -11,17 +11,23 @@ import Alamofire
 
 struct MarvelApi {
 
-    let url = "https://gateway.marvel.com:443/v1/public/characters?limit=10&apikey=9a4fe82f93cdc43bc4ad46de0d20907a&ts=1625789388966&hash=ba58c2971f38720843c2ad54fd7844b0"
+    let url = "https://gateway.marvel.com:443/v1/public/characters?limit=20&apikey=9a4fe82f93cdc43bc4ad46de0d20907a&ts=1625789388966&hash=ba58c2971f38720843c2ad54fd7844b0"
     
     func getHeroes(completion: @escaping (_ herois: Array<Hero>) -> Void) {
         
-        AF.request(url, method: .get).responseJSON { response in
+        AF.request(url + generateGenericsOffsets() , method: .get).responseJSON { response in
         
             guard let dados = try? JSONDecoder().decode(CharacterResponse.self, from: response.data!) else { return }
             
             completion(tratarRetorno(dados))
             
         }
+    }
+    
+    func generateGenericsOffsets() -> String {
+        let offset = Int.random(in: 10..<1453)
+        
+        return "&offset=\(offset)"
     }
     
     func tratarRetorno(_ response: CharacterResponse) -> Array<Hero> {

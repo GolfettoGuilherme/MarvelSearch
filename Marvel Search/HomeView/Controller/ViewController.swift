@@ -7,60 +7,66 @@
 
 import UIKit
 
-class ViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
-    
-    @IBOutlet weak var tbvHeros: UITableView!
+class ViewController: UIViewController {
+        
+    @IBOutlet weak var cvHeros: UICollectionView!
     
     var heros: Array<Hero> = []
     var detailController: HeroDetailViewController!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        tbvHeros.dataSource = self
-        tbvHeros.delegate = self
+        cvHeros.dataSource = self
+        cvHeros.delegate = self
+        
         buscarHerois()
     }
     
     func buscarHerois() {
-        
         MarvelApi().getHeroes { listaDeHerois in
             self.heros = listaDeHerois
-            self.tbvHeros.reloadData()
+            self.cvHeros.reloadData()
         }
-        
     }
-    
-    
-   
-
-   
-    //MARK: - Table View
-
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return heros.count
-    }
-
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "CelulaHeroi", for: indexPath) as! HeroTableViewCell
-        
-        cell.setCell(hero: heros[indexPath.row])
-        
-        return cell
-    }
-    
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let targetHero = heros[indexPath.row]
-        
-        detailController.hero = targetHero
-    }
-    
-    
-    //MARK: - Segue
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "showInfo"{
             detailController = segue.destination as? HeroDetailViewController
         }
     }
+    
 }
 
+extension ViewController: UICollectionViewDataSource{
+    
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return heros.count
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "HeroCollectionViewCell", for: indexPath) as! HeroCollectionViewCell
+        
+        cell.setCell(hero: heros[indexPath.row])
+        
+        return cell
+    }
+}
+
+extension ViewController: UICollectionViewDelegate{
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let targetHero = heros[indexPath.row]
+        
+        detailController.hero = targetHero
+    }
+}
+
+extension ViewController: UICollectionViewDelegateFlowLayout{
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        
+        return CGSize(width: collectionView.bounds.width / 2 - 15, height: 160)
+        
+    }
+    
+}
