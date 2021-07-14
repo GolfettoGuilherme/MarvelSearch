@@ -15,7 +15,6 @@
 		0E422CBC2697905100804543 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0E422CBA2697905100804543 /* LaunchScreen.storyboard */; };
 		0E422CC72697905100804543 /* Marvel_SearchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E422CC62697905100804543 /* Marvel_SearchTests.swift */; };
 		0E422CD22697905100804543 /* Marvel_SearchUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E422CD12697905100804543 /* Marvel_SearchUITests.swift */; };
-		0E422CE62697989600804543 /* HeroTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E422CE52697989600804543 /* HeroTableViewCell.swift */; };
 		0E422CE826979C1F00804543 /* Hero.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E422CE726979C1F00804543 /* Hero.swift */; };
 		0E422CEF2697A5C300804543 /* cap.png in Resources */ = {isa = PBXBuildFile; fileRef = 0E422CEA2697A5C100804543 /* cap.png */; };
 		0E422CF02697A5C300804543 /* spiderman.png in Resources */ = {isa = PBXBuildFile; fileRef = 0E422CEB2697A5C200804543 /* spiderman.png */; };
@@ -81,7 +80,6 @@
 		0E422CCD2697905100804543 /* Marvel SearchUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Marvel SearchUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		0E422CD12697905100804543 /* Marvel_SearchUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Marvel_SearchUITests.swift; sourceTree = "<group>"; };
 		0E422CD32697905100804543 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		0E422CE52697989600804543 /* HeroTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeroTableViewCell.swift; sourceTree = "<group>"; };
 		0E422CE726979C1F00804543 /* Hero.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Hero.swift; sourceTree = "<group>"; };
 		0E422CEA2697A5C100804543 /* cap.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = cap.png; sourceTree = "<group>"; };
 		0E422CEB2697A5C200804543 /* spiderman.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = spiderman.png; sourceTree = "<group>"; };
@@ -233,7 +231,6 @@
 		0E422CFC2697C5E500804543 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				0E422CE52697989600804543 /* HeroTableViewCell.swift */,
 				0E960164269E6570003D30DB /* HeroCollectionViewCell.swift */,
 			);
 			path = View;
@@ -426,7 +423,6 @@
 				0E422CB22697905000804543 /* SceneDelegate.swift in Sources */,
 				0E960163269D350F003D30DB /* ComicsTableViewCell.swift in Sources */,
 				0ED626392697DB73002F3C26 /* CharacterResponse.swift in Sources */,
-				0E422CE62697989600804543 /* HeroTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
