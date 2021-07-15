@@ -8,14 +8,18 @@
 import UIKit
 import AlamofireImage
 
-class HeroDetailViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
-    
-        
+class HeroDetailViewController: UIViewController {
     var hero:Hero?
 
     @IBOutlet weak var imgHero: UIImageView!
     @IBOutlet weak var lblDescriptionHero: UILabel!
     @IBOutlet weak var tbComics: UITableView!
+    
+    @IBOutlet weak var lblTitleDescriptionHe: UILabel!
+    @IBOutlet weak var viewSeparatorTitleDescriptionHero: UIView!
+    
+    @IBOutlet weak var lblTitleComics: UILabel!
+    @IBOutlet weak var viewSeparatorComics: UIView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -25,20 +29,41 @@ class HeroDetailViewController: UIViewController, UITableViewDelegate, UITableVi
         
         inicializeComponents()
     }
-    //MARK: - Metodos
 
     func inicializeComponents(){
-        
         title = hero!.name
         
         guard let imageUrl = hero!.getURLforThumbnail() else { return }
+        
         imgHero.af.setImage(withURL: imageUrl)
         
-        //lblDescriptionHero.text = hero!.heroDescription
+        if hero!.heroDescription.isEmpty {
+            lblTitleDescriptionHe.isHidden = true
+            viewSeparatorTitleDescriptionHero.isHidden = true
+            lblDescriptionHero.isHidden = true
+            
+        } else {
+            lblDescriptionHero.isHidden = false
+            lblTitleDescriptionHe.isHidden = false
+            viewSeparatorTitleDescriptionHero.isHidden = false
+            lblDescriptionHero.text = hero!.heroDescription
+        }
+        
+        if hero!.comicList.isEmpty {
+            lblTitleComics.isHidden = true
+            viewSeparatorComics.isHidden = true
+        } else{
+            lblTitleComics.isHidden = false
+            viewSeparatorComics.isHidden = false
+        }
+        
+        
     }
-    
-    //MARK: - TableView
 
+}
+
+extension HeroDetailViewController: UITableViewDelegate, UITableViewDataSource {
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
         guard let size = hero?.comicList.count else { return 0 }
@@ -56,5 +81,4 @@ class HeroDetailViewController: UIViewController, UITableViewDelegate, UITableVi
         return cell
     }
     
-
 }

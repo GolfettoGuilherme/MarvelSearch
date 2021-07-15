@@ -28,18 +28,22 @@
                                 </collectionViewFlowLayout>
                                 <cells>
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="HeroCollectionViewCell" id="sUM-rv-CS8" customClass="HeroCollectionViewCell" customModule="Marvel_Search" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="0.0" width="135" height="160"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="135" height="200"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="JRx-Ir-Qei">
-                                            <rect key="frame" x="0.0" y="0.0" width="135" height="160"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="135" height="200"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="whJ-Wh-2h1">
-                                                    <rect key="frame" x="0.0" y="0.0" width="135" height="103"/>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="whJ-Wh-2h1">
+                                                    <rect key="frame" x="0.0" y="0.0" width="135" height="135"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" secondItem="whJ-Wh-2h1" secondAttribute="height" multiplier="1:1" id="0QG-6g-SIh"/>
+                                                        <constraint firstAttribute="width" constant="130" id="hCf-Gv-gkr"/>
+                                                    </constraints>
                                                     <preferredSymbolConfiguration key="preferredSymbolConfiguration" scale="default"/>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="aoshasijdhasjkdhalskjdhaklsjdhakljs" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TzS-o4-URv">
-                                                    <rect key="frame" x="8" y="111" width="119" height="41"/>
+                                                    <rect key="frame" x="8" y="143" width="119" height="49"/>
                                                     <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
@@ -55,11 +59,10 @@
                                                 <constraint firstItem="whJ-Wh-2h1" firstAttribute="leading" secondItem="JRx-Ir-Qei" secondAttribute="leading" id="pY2-DY-gX6"/>
                                             </constraints>
                                         </collectionViewCellContentView>
-                                        <size key="customSize" width="135" height="160"/>
+                                        <size key="customSize" width="135" height="200"/>
                                         <connections>
                                             <outlet property="imgHero" destination="whJ-Wh-2h1" id="0qh-cf-noN"/>
                                             <outlet property="lblHero" destination="TzS-o4-URv" id="Dcp-UB-DHG"/>
-                                            <segue destination="cu0-cV-ia5" kind="show" identifier="showInfo" id="sOW-Xe-qMW"/>
                                         </connections>
                                     </collectionViewCell>
                                 </cells>
@@ -86,19 +89,19 @@
         <!--Hero Detail View Controller-->
         <scene sceneID="nxa-yb-9e8">
             <objects>
-                <viewController id="cu0-cV-ia5" customClass="HeroDetailViewController" customModule="Marvel_Search" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="HeroDetail" id="cu0-cV-ia5" customClass="HeroDetailViewController" customModule="Marvel_Search" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="hlS-ay-Guq">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3a0-ae-M2l">
-                                <rect key="frame" x="0.0" y="140" width="414" height="722"/>
+                                <rect key="frame" x="0.0" y="44" width="414" height="818"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Md3-Mn-5Hc" userLabel="Content View">
-                                        <rect key="frame" x="0.0" y="0.0" width="414" height="722"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="692.5"/>
                                         <subviews>
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="aok-E5-WGS">
-                                                <rect key="frame" x="16" y="16" width="250" height="250"/>
+                                                <rect key="frame" x="82" y="16" width="250" height="250"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="250" id="5Wi-89-TR9"/>
                                                     <constraint firstAttribute="width" constant="250" id="kfe-aM-mHc"/>
@@ -117,33 +120,30 @@
                                                     <constraint firstAttribute="height" constant="1" id="H0g-rj-F4G"/>
                                                 </constraints>
                                             </view>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Empty" lineBreakMode="tailTruncation" numberOfLines="10" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JMd-ai-Ek0">
-                                                <rect key="frame" x="16" y="336" width="382" height="250"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="height" constant="250" id="JYq-kp-0Ul"/>
-                                                </constraints>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Empty" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JMd-ai-Ek0">
+                                                <rect key="frame" x="16" y="336" width="382" height="20.5"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Comics Related" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Fmg-Be-Lbc">
-                                                <rect key="frame" x="16" y="602" width="382" height="21"/>
+                                                <rect key="frame" x="16" y="372.5" width="382" height="21"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="t5v-W6-QvP">
-                                                <rect key="frame" x="16" y="639" width="382" height="1"/>
+                                                <rect key="frame" x="16" y="409.5" width="382" height="1"/>
                                                 <color key="backgroundColor" systemColor="systemGrayColor"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="1" id="vYC-MD-JVL"/>
                                                 </constraints>
                                             </view>
-                                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="xzM-fL-z0j">
-                                                <rect key="frame" x="16" y="656" width="382" height="250"/>
+                                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="xzM-fL-z0j" customClass="AutoSizingUITableView" customModule="Marvel_Search" customModuleProvider="target">
+                                                <rect key="frame" x="16" y="426.5" width="382" height="250"/>
                                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="height" constant="250" id="M0f-Iz-QS0"/>
+                                                    <constraint firstAttribute="height" constant="250" placeholder="YES" id="i7D-5c-5wL"/>
                                                 </constraints>
                                                 <prototypes>
                                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="celulaComics" id="fx1-Xx-ROv" customClass="ComicsTableViewCell" customModule="Marvel_Search" customModuleProvider="target">
@@ -183,14 +183,15 @@
                                             <constraint firstItem="t5v-W6-QvP" firstAttribute="top" secondItem="Fmg-Be-Lbc" secondAttribute="bottom" constant="16" id="H0q-zr-5TY"/>
                                             <constraint firstItem="xzM-fL-z0j" firstAttribute="leading" secondItem="Md3-Mn-5Hc" secondAttribute="leading" constant="16" id="LKk-4V-5M7"/>
                                             <constraint firstAttribute="trailing" secondItem="t5v-W6-QvP" secondAttribute="trailing" constant="16" id="Mmy-fy-Q31"/>
-                                            <constraint firstItem="aok-E5-WGS" firstAttribute="leading" secondItem="Md3-Mn-5Hc" secondAttribute="leading" constant="16" id="NRm-IB-3Hw"/>
                                             <constraint firstItem="7eF-u3-WED" firstAttribute="top" secondItem="gUY-Uh-GhI" secondAttribute="bottom" constant="16" id="aV8-Oy-bWI"/>
                                             <constraint firstAttribute="trailing" secondItem="xzM-fL-z0j" secondAttribute="trailing" constant="16" id="b7o-oW-bPL"/>
+                                            <constraint firstAttribute="bottom" secondItem="xzM-fL-z0j" secondAttribute="bottom" constant="16" id="bC8-AS-ECK"/>
                                             <constraint firstItem="aok-E5-WGS" firstAttribute="top" secondItem="Md3-Mn-5Hc" secondAttribute="top" constant="16" id="cbJ-Ks-zFo"/>
                                             <constraint firstItem="JMd-ai-Ek0" firstAttribute="top" secondItem="7eF-u3-WED" secondAttribute="bottom" constant="16" id="fgW-fU-f3K"/>
                                             <constraint firstItem="7eF-u3-WED" firstAttribute="leading" secondItem="Md3-Mn-5Hc" secondAttribute="leading" constant="16" id="iZb-y6-RbY"/>
                                             <constraint firstAttribute="trailing" secondItem="Fmg-Be-Lbc" secondAttribute="trailing" constant="16" id="jim-6O-gqZ"/>
                                             <constraint firstItem="xzM-fL-z0j" firstAttribute="top" secondItem="t5v-W6-QvP" secondAttribute="bottom" constant="16" id="k5x-FT-cb2"/>
+                                            <constraint firstItem="aok-E5-WGS" firstAttribute="centerX" secondItem="Md3-Mn-5Hc" secondAttribute="centerX" id="mLO-Aj-MEZ"/>
                                             <constraint firstItem="Fmg-Be-Lbc" firstAttribute="top" secondItem="JMd-ai-Ek0" secondAttribute="bottom" constant="16" id="nlU-7A-x8N"/>
                                             <constraint firstAttribute="trailing" secondItem="gUY-Uh-GhI" secondAttribute="trailing" constant="16" id="pda-M1-4U7"/>
                                             <constraint firstItem="gUY-Uh-GhI" firstAttribute="leading" secondItem="Md3-Mn-5Hc" secondAttribute="leading" constant="16" id="uAa-h9-iCD"/>
@@ -223,7 +224,11 @@
                     <connections>
                         <outlet property="imgHero" destination="aok-E5-WGS" id="xie-fZ-zFD"/>
                         <outlet property="lblDescriptionHero" destination="JMd-ai-Ek0" id="U2C-rG-UgH"/>
+                        <outlet property="lblTitleComics" destination="Fmg-Be-Lbc" id="mtb-6N-Bwo"/>
+                        <outlet property="lblTitleDescriptionHe" destination="gUY-Uh-GhI" id="vbt-gP-uV0"/>
                         <outlet property="tbComics" destination="xzM-fL-z0j" id="zVq-fG-XPN"/>
+                        <outlet property="viewSeparatorComics" destination="t5v-W6-QvP" id="KGe-CY-iIb"/>
+                        <outlet property="viewSeparatorTitleDescriptionHero" destination="7eF-u3-WED" id="vQb-kQ-duc"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2nw-wb-BAL" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

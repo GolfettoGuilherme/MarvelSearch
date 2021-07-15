@@ -7,7 +7,7 @@
 
 import UIKit
 
-class Hero: NSObject {
+class Hero {
        
     init(thumbnail: String, name: String, heroDescription: String) {
         self.thumbnail = thumbnail

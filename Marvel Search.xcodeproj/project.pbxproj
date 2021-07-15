@@ -26,6 +26,8 @@
 		0E422CFF2697C74500804543 /* MarvelApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E422CFE2697C74500804543 /* MarvelApi.swift */; };
 		0E960163269D350F003D30DB /* ComicsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E960162269D350F003D30DB /* ComicsTableViewCell.swift */; };
 		0E960165269E6570003D30DB /* HeroCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E960164269E6570003D30DB /* HeroCollectionViewCell.swift */; };
+		0E960168269FC8B2003D30DB /* AutoSizingUITableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E960167269FC8B2003D30DB /* AutoSizingUITableView.swift */; };
+		0E96016D26A06D97003D30DB /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E96016C26A06D97003D30DB /* HomeViewModel.swift */; };
 		0ED626312697CE43002F3C26 /* Alamofire.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0ED6262F2697CE43002F3C26 /* Alamofire.xcframework */; };
 		0ED626322697CE43002F3C26 /* Alamofire.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 0ED6262F2697CE43002F3C26 /* Alamofire.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		0ED626332697CE43002F3C26 /* AlamofireImage.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0ED626302697CE43002F3C26 /* AlamofireImage.xcframework */; };
@@ -91,6 +93,8 @@
 		0E422CFE2697C74500804543 /* MarvelApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarvelApi.swift; sourceTree = "<group>"; };
 		0E960162269D350F003D30DB /* ComicsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComicsTableViewCell.swift; sourceTree = "<group>"; };
 		0E960164269E6570003D30DB /* HeroCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeroCollectionViewCell.swift; sourceTree = "<group>"; };
+		0E960167269FC8B2003D30DB /* AutoSizingUITableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AutoSizingUITableView.swift; sourceTree = "<group>"; };
+		0E96016C26A06D97003D30DB /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
 		0ED6262F2697CE43002F3C26 /* Alamofire.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = Alamofire.xcframework; path = Carthage/Build/Alamofire.xcframework; sourceTree = "<group>"; };
 		0ED626302697CE43002F3C26 /* AlamofireImage.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = AlamofireImage.xcframework; path = Carthage/Build/AlamofireImage.xcframework; sourceTree = "<group>"; };
 		0ED626382697DB73002F3C26 /* CharacterResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterResponse.swift; sourceTree = "<group>"; };
@@ -148,10 +152,11 @@
 			isa = PBXGroup;
 			children = (
 				0E422CE92697A5AF00804543 /* Assets */,
-				0ED626362697DB29002F3C26 /* Service */,
 				0E422CDF269790EB00804543 /* Model */,
-				0E422CF42697A9D800804543 /* HomeView */,
-				0E422CFA2697C5A600804543 /* HeroDetail */,
+				0E96016A26A06D61003D30DB /* Views */,
+				0E96016B26A06D69003D30DB /* ViewModels */,
+				0ED626362697DB29002F3C26 /* Service */,
+				0E960166269FC87B003D30DB /* Utils */,
 				0E422CB52697905000804543 /* Main.storyboard */,
 				0E422CAF2697905000804543 /* AppDelegate.swift */,
 				0E422CB12697905000804543 /* SceneDelegate.swift */,
@@ -202,54 +207,39 @@
 			path = Assets;
 			sourceTree = "<group>";
 		};
-		0E422CF42697A9D800804543 /* HomeView */ = {
+		0E960166269FC87B003D30DB /* Utils */ = {
 			isa = PBXGroup;
 			children = (
-				0E422CFC2697C5E500804543 /* View */,
-				0E422CFB2697C5DC00804543 /* Controller */,
+				0E960167269FC8B2003D30DB /* AutoSizingUITableView.swift */,
 			);
-			path = HomeView;
+			path = Utils;
 			sourceTree = "<group>";
 		};
-		0E422CFA2697C5A600804543 /* HeroDetail */ = {
+		0E96016A26A06D61003D30DB /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				0E960161269D34F0003D30DB /* Views */,
-				0E422CFD2697C5FC00804543 /* Controller */,
-			);
-			path = HeroDetail;
-			sourceTree = "<group>";
-		};
-		0E422CFB2697C5DC00804543 /* Controller */ = {
-			isa = PBXGroup;
-			children = (
+				0E96017026A06E1B003D30DB /* Cells */,
 				0E422CB32697905000804543 /* ViewController.swift */,
+				0E422CF62697AA1A00804543 /* HeroDetailViewController.swift */,
 			);
-			path = Controller;
+			path = Views;
 			sourceTree = "<group>";
 		};
-		0E422CFC2697C5E500804543 /* View */ = {
+		0E96016B26A06D69003D30DB /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				0E96016C26A06D97003D30DB /* HomeViewModel.swift */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		0E96017026A06E1B003D30DB /* Cells */ = {
 			isa = PBXGroup;
 			children = (
 				0E960164269E6570003D30DB /* HeroCollectionViewCell.swift */,
-			);
-			path = View;
-			sourceTree = "<group>";
-		};
-		0E422CFD2697C5FC00804543 /* Controller */ = {
-			isa = PBXGroup;
-			children = (
-				0E422CF62697AA1A00804543 /* HeroDetailViewController.swift */,
-			);
-			path = Controller;
-			sourceTree = "<group>";
-		};
-		0E960161269D34F0003D30DB /* Views */ = {
-			isa = PBXGroup;
-			children = (
 				0E960162269D350F003D30DB /* ComicsTableViewCell.swift */,
 			);
-			path = Views;
+			path = Cells;
 			sourceTree = "<group>";
 		};
 		0ED6262E2697CE43002F3C26 /* Frameworks */ = {
@@ -288,6 +278,7 @@
 				0E422CA92697905000804543 /* Frameworks */,
 				0E422CAA2697905000804543 /* Resources */,
 				0ED626352697CE43002F3C26 /* Embed Frameworks */,
+				0E960169269FD12C003D30DB /* SwfitLint */,
 			);
 			buildRules = (
 			);
@@ -409,12 +400,34 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		0E960169269FD12C003D30DB /* SwfitLint */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = SwfitLint;
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\n\n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		0E422CA82697905000804543 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				0E960165269E6570003D30DB /* HeroCollectionViewCell.swift in Sources */,
+				0E96016D26A06D97003D30DB /* HomeViewModel.swift in Sources */,
 				0E422CFF2697C74500804543 /* MarvelApi.swift in Sources */,
 				0E422CE826979C1F00804543 /* Hero.swift in Sources */,
 				0E422CB42697905000804543 /* ViewController.swift in Sources */,
@@ -422,6 +435,7 @@
 				0E422CF72697AA1A00804543 /* HeroDetailViewController.swift in Sources */,
 				0E422CB22697905000804543 /* SceneDelegate.swift in Sources */,
 				0E960163269D350F003D30DB /* ComicsTableViewCell.swift in Sources */,
+				0E960168269FC8B2003D30DB /* AutoSizingUITableView.swift in Sources */,
 				0ED626392697DB73002F3C26 /* CharacterResponse.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
