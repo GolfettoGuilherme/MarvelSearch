@@ -24,10 +24,12 @@
 		0E422CF72697AA1A00804543 /* HeroDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E422CF62697AA1A00804543 /* HeroDetailViewController.swift */; };
 		0E422CF92697BCBB00804543 /* fundo.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 0E422CF82697BCBB00804543 /* fundo.jpg */; };
 		0E422CFF2697C74500804543 /* MarvelApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E422CFE2697C74500804543 /* MarvelApi.swift */; };
-		0E960163269D350F003D30DB /* ComicsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E960162269D350F003D30DB /* ComicsTableViewCell.swift */; };
 		0E960165269E6570003D30DB /* HeroCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E960164269E6570003D30DB /* HeroCollectionViewCell.swift */; };
 		0E960168269FC8B2003D30DB /* AutoSizingUITableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E960167269FC8B2003D30DB /* AutoSizingUITableView.swift */; };
 		0E96016D26A06D97003D30DB /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E96016C26A06D97003D30DB /* HomeViewModel.swift */; };
+		0E96017226AB55BB003D30DB /* HeroDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0E96017126AB55BB003D30DB /* HeroDetailViewController.xib */; };
+		0E96017926AB59A5003D30DB /* ComicsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E96017726AB59A5003D30DB /* ComicsTableViewCell.swift */; };
+		0E96017A26AB59A5003D30DB /* ComicsTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0E96017826AB59A5003D30DB /* ComicsTableViewCell.xib */; };
 		0ED626312697CE43002F3C26 /* Alamofire.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0ED6262F2697CE43002F3C26 /* Alamofire.xcframework */; };
 		0ED626322697CE43002F3C26 /* Alamofire.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 0ED6262F2697CE43002F3C26 /* Alamofire.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		0ED626332697CE43002F3C26 /* AlamofireImage.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0ED626302697CE43002F3C26 /* AlamofireImage.xcframework */; };
@@ -91,10 +93,12 @@
 		0E422CF62697AA1A00804543 /* HeroDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeroDetailViewController.swift; sourceTree = "<group>"; };
 		0E422CF82697BCBB00804543 /* fundo.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = fundo.jpg; sourceTree = "<group>"; };
 		0E422CFE2697C74500804543 /* MarvelApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarvelApi.swift; sourceTree = "<group>"; };
-		0E960162269D350F003D30DB /* ComicsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComicsTableViewCell.swift; sourceTree = "<group>"; };
 		0E960164269E6570003D30DB /* HeroCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeroCollectionViewCell.swift; sourceTree = "<group>"; };
 		0E960167269FC8B2003D30DB /* AutoSizingUITableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AutoSizingUITableView.swift; sourceTree = "<group>"; };
 		0E96016C26A06D97003D30DB /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
+		0E96017126AB55BB003D30DB /* HeroDetailViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HeroDetailViewController.xib; sourceTree = "<group>"; };
+		0E96017726AB59A5003D30DB /* ComicsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComicsTableViewCell.swift; sourceTree = "<group>"; };
+		0E96017826AB59A5003D30DB /* ComicsTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ComicsTableViewCell.xib; sourceTree = "<group>"; };
 		0ED6262F2697CE43002F3C26 /* Alamofire.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = Alamofire.xcframework; path = Carthage/Build/Alamofire.xcframework; sourceTree = "<group>"; };
 		0ED626302697CE43002F3C26 /* AlamofireImage.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = AlamofireImage.xcframework; path = Carthage/Build/AlamofireImage.xcframework; sourceTree = "<group>"; };
 		0ED626382697DB73002F3C26 /* CharacterResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterResponse.swift; sourceTree = "<group>"; };
@@ -221,6 +225,7 @@
 				0E96017026A06E1B003D30DB /* Cells */,
 				0E422CB32697905000804543 /* ViewController.swift */,
 				0E422CF62697AA1A00804543 /* HeroDetailViewController.swift */,
+				0E96017126AB55BB003D30DB /* HeroDetailViewController.xib */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -237,7 +242,8 @@
 			isa = PBXGroup;
 			children = (
 				0E960164269E6570003D30DB /* HeroCollectionViewCell.swift */,
-				0E960162269D350F003D30DB /* ComicsTableViewCell.swift */,
+				0E96017726AB59A5003D30DB /* ComicsTableViewCell.swift */,
+				0E96017826AB59A5003D30DB /* ComicsTableViewCell.xib */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -373,12 +379,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				0E422CBC2697905100804543 /* LaunchScreen.storyboard in Resources */,
+				0E96017A26AB59A5003D30DB /* ComicsTableViewCell.xib in Resources */,
 				0E422CB92697905100804543 /* Assets.xcassets in Resources */,
 				0E422CEF2697A5C300804543 /* cap.png in Resources */,
 				0E422CF02697A5C300804543 /* spiderman.png in Resources */,
 				0E422CF22697A5C300804543 /* thor.png in Resources */,
 				0E422CF92697BCBB00804543 /* fundo.jpg in Resources */,
 				0E422CB72697905000804543 /* Main.storyboard in Resources */,
+				0E96017226AB55BB003D30DB /* HeroDetailViewController.xib in Resources */,
 				0E422CF12697A5C300804543 /* hulk.png in Resources */,
 				0E422CF32697A5C300804543 /* viuva.png in Resources */,
 			);
@@ -434,8 +442,8 @@
 				0E422CB02697905000804543 /* AppDelegate.swift in Sources */,
 				0E422CF72697AA1A00804543 /* HeroDetailViewController.swift in Sources */,
 				0E422CB22697905000804543 /* SceneDelegate.swift in Sources */,
-				0E960163269D350F003D30DB /* ComicsTableViewCell.swift in Sources */,
 				0E960168269FC8B2003D30DB /* AutoSizingUITableView.swift in Sources */,
+				0E96017926AB59A5003D30DB /* ComicsTableViewCell.swift in Sources */,
 				0ED626392697DB73002F3C26 /* CharacterResponse.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

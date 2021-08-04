@@ -19,6 +19,13 @@ struct HomeViewModel {
         
     }
     
+    func getMoreHeroes(offset: Int, completion: @escaping (_ heroes: Array<Hero>) -> Void) {
+        
+        MarvelApi().getHeroes(offset: offset) { response in
+            completion(generateHeroes(from: response))
+        }
+    }
+    
     private func generateHeroes(from response: CharacterResponse) -> Array<Hero> {
         var listHeroes:Array<Hero> = []
         
@@ -60,4 +67,5 @@ struct HomeViewModel {
         
         return listHeroes
     }
+   
 }

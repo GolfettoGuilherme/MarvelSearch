@@ -10,6 +10,8 @@ import AlamofireImage
 
 class HeroDetailViewController: UIViewController {
     var hero:Hero?
+    
+    let cellId = "celulaComics"
 
     @IBOutlet weak var imgHero: UIImageView!
     @IBOutlet weak var lblDescriptionHero: UILabel!
@@ -26,10 +28,10 @@ class HeroDetailViewController: UIViewController {
         
         tbComics.delegate = self
         tbComics.dataSource = self
-        
-        inicializeComponents()
+        tbComics.register(UINib(nibName: "ComicsTableViewCell", bundle: nil), forCellReuseIdentifier: cellId)
+    
     }
-
+    
     func inicializeComponents(){
         title = hero!.name
         

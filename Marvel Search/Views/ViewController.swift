@@ -24,8 +24,6 @@ class ViewController: UIViewController {
             self.heroes = listHeroes
             self.cvHeros.reloadData()
         }
-        
-        
     }
    
 }
@@ -47,16 +45,27 @@ extension ViewController: UICollectionViewDataSource{
 }
 
 extension ViewController: UICollectionViewDelegate{
+    
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let targetHero = heroes[indexPath.row]
         
-        let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        
-        guard let controller = storyboard.instantiateViewController(identifier: "HeroDetail") as? HeroDetailViewController else { return }
+        let controller = HeroDetailViewController()
 
         controller.hero = targetHero
         
         navigationController?.pushViewController(controller, animated: true)
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
+        
+        if indexPath.row == heroes.count / 2 {
+            
+            viewModel.getMoreHeroes(offset: heroes.count) { listHeroes in
+                self.heroes.append(contentsOf: listHeroes)
+                self.cvHeros.reloadData()
+            }
+            
+        }
     }
 }
 
