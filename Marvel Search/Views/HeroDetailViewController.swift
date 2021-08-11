@@ -14,14 +14,16 @@ class HeroDetailViewController: UIViewController {
     let cellId = "celulaComics"
 
     @IBOutlet weak var imgHero: UIImageView!
-    @IBOutlet weak var lblDescriptionHero: UILabel!
-    @IBOutlet weak var tbComics: UITableView!
     
-    @IBOutlet weak var lblTitleDescriptionHe: UILabel!
-    @IBOutlet weak var viewSeparatorTitleDescriptionHero: UIView!
+    @IBOutlet weak var lblHeroDescriptionTitle: UILabel!
+    @IBOutlet weak var lblSeparatorHeroDescription: UIView!
+    @IBOutlet weak var lblHeroDescription: UILabel!
     
-    @IBOutlet weak var lblTitleComics: UILabel!
-    @IBOutlet weak var viewSeparatorComics: UIView!
+    @IBOutlet weak var lblComicsrelatedTitle: UILabel!
+    @IBOutlet weak var lblSeparatorComicsRelated: UIView!
+    
+    @IBOutlet weak var tbComics: AutoSizingUITableView!
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -29,7 +31,9 @@ class HeroDetailViewController: UIViewController {
         tbComics.delegate = self
         tbComics.dataSource = self
         tbComics.register(UINib(nibName: "ComicsTableViewCell", bundle: nil), forCellReuseIdentifier: cellId)
-    
+        
+        inicializeComponents()
+        
     }
     
     func inicializeComponents(){
@@ -40,23 +44,22 @@ class HeroDetailViewController: UIViewController {
         imgHero.af.setImage(withURL: imageUrl)
         
         if hero!.heroDescription.isEmpty {
-            lblTitleDescriptionHe.isHidden = true
-            viewSeparatorTitleDescriptionHero.isHidden = true
-            lblDescriptionHero.isHidden = true
-            
+            lblHeroDescriptionTitle.isHidden = true
+            lblSeparatorHeroDescription.isHidden = true
+            lblHeroDescription.isHidden = true
         } else {
-            lblDescriptionHero.isHidden = false
-            lblTitleDescriptionHe.isHidden = false
-            viewSeparatorTitleDescriptionHero.isHidden = false
-            lblDescriptionHero.text = hero!.heroDescription
+            lblHeroDescriptionTitle.isHidden = false
+            lblSeparatorHeroDescription.isHidden = false
+            lblHeroDescription.isHidden = false
+            lblHeroDescription.text = hero!.heroDescription
         }
         
         if hero!.comicList.isEmpty {
-            lblTitleComics.isHidden = true
-            viewSeparatorComics.isHidden = true
+            lblComicsrelatedTitle.isHidden = true
+            lblSeparatorComicsRelated.isHidden = true
         } else{
-            lblTitleComics.isHidden = false
-            viewSeparatorComics.isHidden = false
+            lblComicsrelatedTitle.isHidden = false
+            lblSeparatorComicsRelated.isHidden = false
         }
         
         

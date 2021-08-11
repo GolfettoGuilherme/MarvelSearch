@@ -24,6 +24,15 @@ struct HomeViewModel {
         MarvelApi().getHeroes(offset: offset) { response in
             completion(generateHeroes(from: response))
         }
+        
+    }
+    
+    func getHero(by name: String, completion: @escaping(_ heroes: Array<Hero>) -> Void){
+        
+        MarvelApi().getHero(by: name) { response in
+            completion(generateHeroes(from: response))
+        }
+        
     }
     
     private func generateHeroes(from response: CharacterResponse) -> Array<Hero> {

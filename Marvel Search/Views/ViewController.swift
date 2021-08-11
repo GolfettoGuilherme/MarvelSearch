@@ -10,6 +10,9 @@ import UIKit
 class ViewController: UIViewController {
         
     @IBOutlet weak var cvHeros: UICollectionView!
+
+    let searchController = UISearchController(searchResultsController: nil)
+    var isSearching = false
     
     var heroes: Array<Hero> = []
     
@@ -17,13 +20,27 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         cvHeros.dataSource = self
         cvHeros.delegate = self
         
+        getHeroes()
+        
+        configureSearch()
+        
+    }
+    
+    func getHeroes() {
         viewModel.getHeroes { listHeroes in
             self.heroes = listHeroes
             self.cvHeros.reloadData()
         }
+    }
+    
+    func configureSearch() {
+        self.searchController.searchBar.delegate = self
+        self.searchController.dimsBackgroundDuringPresentation = false
+        self.navigationItem.searchController = searchController
     }
    
 }
@@ -58,14 +75,21 @@ extension ViewController: UICollectionViewDelegate{
     
     func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
         
-        if indexPath.row == heroes.count / 2 {
+        //let searchText = searchController.searchBar.text ?? "" -> isso sempre retorna ""
+        
+        if !self.isSearching {
             
-            viewModel.getMoreHeroes(offset: heroes.count) { listHeroes in
-                self.heroes.append(contentsOf: listHeroes)
-                self.cvHeros.reloadData()
+            if indexPath.row == heroes.count / 2 {
+                
+                viewModel.getMoreHeroes(offset: heroes.count) { listHeroes in
+                    self.heroes.append(contentsOf: listHeroes)
+                    self.cvHeros.reloadData()
+                }
+                
             }
             
         }
+        
     }
 }
 
@@ -77,4 +101,31 @@ extension ViewController: UICollectionViewDelegateFlowLayout{
         
     }
     
+}
+
+extension ViewController : UISearchBarDelegate {
+    
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        if let text = searchBar.text {
+            heroes = []
+            self.cvHeros.reloadData()
+            
+            //inserir animacao de loading
+            viewModel.getHero(by: text) { listHeroes in
+                self.isSearching = true
+                self.heroes = listHeroes
+                self.cvHeros.reloadData()
+            }
+            //encerrar animacao de loading
+            
+        } else{
+            self.isSearching = false
+            getHeroes()
+        }
+    }
+    
+    func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
+        self.isSearching = false
+        getHeroes()
+    }
 }

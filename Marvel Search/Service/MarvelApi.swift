@@ -29,4 +29,20 @@ struct MarvelApi {
         }
     }
     
+    func getHero(by name: String, completion: @escaping (_ response: CharacterResponse) -> Void) {
+        
+        let limitRange = "&limit=60"
+        
+        let nameParam = "&nameStartsWith=\(name)"
+        
+        AF.request(url + nameParam + limitRange, method: .get).responseJSON { response in
+            
+            guard let responseData = response.data else { return }
+            
+            guard let dados = try? JSONDecoder().decode(CharacterResponse.self, from: responseData) else {return}
+            
+            completion(dados)
+        }
+    }
+    
 }
