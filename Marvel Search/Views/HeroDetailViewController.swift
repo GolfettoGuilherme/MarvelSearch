@@ -9,7 +9,8 @@ import UIKit
 import AlamofireImage
 
 class HeroDetailViewController: UIViewController {
-    var hero:Hero?
+    
+    var hero:Character?
     
     let cellId = "celulaComics"
 
@@ -37,29 +38,30 @@ class HeroDetailViewController: UIViewController {
     }
     
     func inicializeComponents(){
+        
         title = hero!.name
         
-        guard let imageUrl = hero!.getURLforThumbnail() else { return }
+        guard let imageUrl = hero!.thumbnail!.getURLforThumbnail() else { return }
         
         imgHero.af.setImage(withURL: imageUrl)
         
-        if hero!.heroDescription.isEmpty {
-            lblHeroDescriptionTitle.isHidden = true
-            lblSeparatorHeroDescription.isHidden = true
-            lblHeroDescription.isHidden = true
-        } else {
+        if let description = hero?.description {
             lblHeroDescriptionTitle.isHidden = false
             lblSeparatorHeroDescription.isHidden = false
             lblHeroDescription.isHidden = false
-            lblHeroDescription.text = hero!.heroDescription
+            lblHeroDescription.text = description
+        } else{
+            lblHeroDescriptionTitle.isHidden = true
+            lblSeparatorHeroDescription.isHidden = true
+            lblHeroDescription.isHidden = true
         }
         
-        if hero!.comicList.isEmpty {
-            lblComicsrelatedTitle.isHidden = true
-            lblSeparatorComicsRelated.isHidden = true
-        } else{
+        if hero!.comics!.items != nil {
             lblComicsrelatedTitle.isHidden = false
             lblSeparatorComicsRelated.isHidden = false
+        } else{
+            lblComicsrelatedTitle.isHidden = true
+            lblSeparatorComicsRelated.isHidden = true
         }
         
         
@@ -71,7 +73,7 @@ extension HeroDetailViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
-        guard let size = hero?.comicList.count else { return 0 }
+        guard let size = hero!.comics?.items?.count else { return 0 }
         
         return size
     }
@@ -79,7 +81,7 @@ extension HeroDetailViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "celulaComics", for: indexPath) as! ComicsTableViewCell
         
-        guard let comicName = hero?.comicList[indexPath.row] else { return cell }
+        guard let comicName = hero!.comics?.items?[indexPath.row] else { return cell }
         
         cell.lblComicName.text = comicName.name
         

@@ -13,10 +13,13 @@ class HeroCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var lblHero: UILabel!
     @IBOutlet weak var imgHero: UIImageView!
     
-    func setCell(hero: Hero) {
+    func setCell(with hero: Character) {
         lblHero.text = hero.name
         
-        guard let imageUrl = hero.getURLforThumbnail() else { return }
+        guard let imageUrl = hero.thumbnail?.getURLforThumbnail() else { return }
+        
         imgHero.af.setImage(withURL: imageUrl)
+        
+        //contentView.backgroundColor?.cgColor = CGColor()
     }
 }
