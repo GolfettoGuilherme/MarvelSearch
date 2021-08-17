@@ -29,7 +29,7 @@ struct HomeViewModel {
     func getHero(by name: String, completion: @escaping(_ heroes: [Character]) -> Void){
         
         MarvelApi().getHero(by: name) { response in
-            completion(response.data.results ?? [])
+            completion(response?.data.results ?? [])
         }
         
     }

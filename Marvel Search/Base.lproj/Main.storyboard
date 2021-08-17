@@ -17,8 +17,17 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Not Found :( " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iX9-DW-S64">
+                                <rect key="frame" x="157.5" y="437.5" width="99.5" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="medium" translatesAutoresizingMaskIntoConstraints="NO" id="Ure-Qm-N0k">
+                                <rect key="frame" x="197" y="438" width="20" height="20"/>
+                            </activityIndicatorView>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="9Hf-Fl-HZk">
-                                <rect key="frame" x="8" y="96" width="398" height="774"/>
+                                <rect key="frame" x="8" y="148" width="398" height="722"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="MRl-js-Dig">
                                     <size key="itemSize" width="200" height="250"/>
@@ -72,14 +81,20 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="9Hf-Fl-HZk" secondAttribute="trailing" constant="8" id="Eem-Tf-Drv"/>
+                            <constraint firstItem="Ure-Qm-N0k" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="H9g-cV-76W"/>
+                            <constraint firstItem="iX9-DW-S64" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="KHy-HG-TRl"/>
+                            <constraint firstItem="Ure-Qm-N0k" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="azn-9r-1Zo"/>
                             <constraint firstItem="9Hf-Fl-HZk" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" constant="8" id="c7h-eg-qxr"/>
                             <constraint firstItem="9Hf-Fl-HZk" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="8" id="iZ1-G9-E07"/>
                             <constraint firstItem="9Hf-Fl-HZk" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="8" id="tkz-1t-tiI"/>
+                            <constraint firstItem="iX9-DW-S64" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="un1-wp-3ZP"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Hero Search" id="YcG-LP-WCO"/>
                     <connections>
+                        <outlet property="aiSpinner" destination="Ure-Qm-N0k" id="opv-F2-NtI"/>
                         <outlet property="cvHeros" destination="9Hf-Fl-HZk" id="Sx7-bj-gSl"/>
+                        <outlet property="lblNotFound" destination="iX9-DW-S64" id="c5l-WX-Dag"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

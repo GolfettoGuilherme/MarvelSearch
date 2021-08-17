@@ -11,6 +11,10 @@ class ViewController: UIViewController {
         
     @IBOutlet weak var cvHeros: UICollectionView!
 
+    @IBOutlet weak var aiSpinner: UIActivityIndicatorView!
+    
+    @IBOutlet weak var lblNotFound: UILabel!
+    
     let searchController = UISearchController(searchResultsController: nil)
     var isSearching = false
     
@@ -24,6 +28,8 @@ class ViewController: UIViewController {
         cvHeros.dataSource = self
         cvHeros.delegate = self
         
+        lblNotFound.isHidden = true
+        
         getHeroes()
         
         configureSearch()
@@ -31,9 +37,12 @@ class ViewController: UIViewController {
     }
     
     func getHeroes() {
+        loadingData(true)
         viewModel.getHeroes { listHeroes in
+            self.lblNotFound.isHidden = true
             self.heroes = listHeroes
             self.cvHeros.reloadData()
+            self.loadingData(false)
         }
     }
     
@@ -41,6 +50,11 @@ class ViewController: UIViewController {
         self.searchController.searchBar.delegate = self
         self.searchController.obscuresBackgroundDuringPresentation = false
         self.navigationItem.searchController = searchController
+    }
+    
+    func loadingData(_ loading: Bool){
+        cvHeros.isHidden = loading
+        loading ? aiSpinner.startAnimating() : aiSpinner.stopAnimating()
     }
    
 }
@@ -112,26 +126,37 @@ extension ViewController: UICollectionViewDelegateFlowLayout{
 extension ViewController : UISearchBarDelegate {
     
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        
         if let text = searchBar.text {
-            heroes = []
-            self.cvHeros.reloadData()
             
-            //inserir animacao de loading
+            heroes = []
+            
+            loadingData(true)
+            
+            cvHeros.reloadData()
+            
             viewModel.getHero(by: text) { listHeroes in
-                self.isSearching = true
-                self.heroes = listHeroes
-                self.cvHeros.reloadData()
+                
+                self.loadingData(false)
+                if listHeroes.count > 0 {
+                    self.lblNotFound.isHidden = true
+                    self.isSearching = true
+                    self.heroes = listHeroes
+                    self.cvHeros.reloadData()
+                }
+                else{
+                    self.lblNotFound.isHidden = false
+                }
             }
-            //encerrar animacao de loading
             
         } else{
-            self.isSearching = false
+            isSearching = false
             getHeroes()
         }
     }
     
     func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
-        self.isSearching = false
+        isSearching = false
         getHeroes()
     }
 }

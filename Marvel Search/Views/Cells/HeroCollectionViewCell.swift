@@ -20,6 +20,9 @@ class HeroCollectionViewCell: UICollectionViewCell {
         
         imgHero.af.setImage(withURL: imageUrl)
         
-        //contentView.backgroundColor?.cgColor = CGColor()
+    }
+    
+    override func prepareForReuse() {
+        imgHero.image = nil
     }
 }
