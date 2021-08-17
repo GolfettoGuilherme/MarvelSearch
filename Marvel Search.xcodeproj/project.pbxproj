@@ -15,11 +15,6 @@
 		0E422CBC2697905100804543 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0E422CBA2697905100804543 /* LaunchScreen.storyboard */; };
 		0E422CC72697905100804543 /* Marvel_SearchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E422CC62697905100804543 /* Marvel_SearchTests.swift */; };
 		0E422CD22697905100804543 /* Marvel_SearchUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E422CD12697905100804543 /* Marvel_SearchUITests.swift */; };
-		0E422CEF2697A5C300804543 /* cap.png in Resources */ = {isa = PBXBuildFile; fileRef = 0E422CEA2697A5C100804543 /* cap.png */; };
-		0E422CF02697A5C300804543 /* spiderman.png in Resources */ = {isa = PBXBuildFile; fileRef = 0E422CEB2697A5C200804543 /* spiderman.png */; };
-		0E422CF12697A5C300804543 /* hulk.png in Resources */ = {isa = PBXBuildFile; fileRef = 0E422CEC2697A5C200804543 /* hulk.png */; };
-		0E422CF22697A5C300804543 /* thor.png in Resources */ = {isa = PBXBuildFile; fileRef = 0E422CED2697A5C200804543 /* thor.png */; };
-		0E422CF32697A5C300804543 /* viuva.png in Resources */ = {isa = PBXBuildFile; fileRef = 0E422CEE2697A5C300804543 /* viuva.png */; };
 		0E422CF72697AA1A00804543 /* HeroDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E422CF62697AA1A00804543 /* HeroDetailViewController.swift */; };
 		0E422CF92697BCBB00804543 /* fundo.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 0E422CF82697BCBB00804543 /* fundo.jpg */; };
 		0E422CFF2697C74500804543 /* MarvelApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E422CFE2697C74500804543 /* MarvelApi.swift */; };
@@ -88,11 +83,6 @@
 		0E422CCD2697905100804543 /* Marvel SearchUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Marvel SearchUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		0E422CD12697905100804543 /* Marvel_SearchUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Marvel_SearchUITests.swift; sourceTree = "<group>"; };
 		0E422CD32697905100804543 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		0E422CEA2697A5C100804543 /* cap.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = cap.png; sourceTree = "<group>"; };
-		0E422CEB2697A5C200804543 /* spiderman.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = spiderman.png; sourceTree = "<group>"; };
-		0E422CEC2697A5C200804543 /* hulk.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = hulk.png; sourceTree = "<group>"; };
-		0E422CED2697A5C200804543 /* thor.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = thor.png; sourceTree = "<group>"; };
-		0E422CEE2697A5C300804543 /* viuva.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = viuva.png; sourceTree = "<group>"; };
 		0E422CF62697AA1A00804543 /* HeroDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeroDetailViewController.swift; sourceTree = "<group>"; };
 		0E422CF82697BCBB00804543 /* fundo.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = fundo.jpg; sourceTree = "<group>"; };
 		0E422CFE2697C74500804543 /* MarvelApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarvelApi.swift; sourceTree = "<group>"; };
@@ -209,11 +199,6 @@
 			isa = PBXGroup;
 			children = (
 				0E422CF82697BCBB00804543 /* fundo.jpg */,
-				0E422CEA2697A5C100804543 /* cap.png */,
-				0E422CEC2697A5C200804543 /* hulk.png */,
-				0E422CEB2697A5C200804543 /* spiderman.png */,
-				0E422CED2697A5C200804543 /* thor.png */,
-				0E422CEE2697A5C300804543 /* viuva.png */,
 			);
 			path = Assets;
 			sourceTree = "<group>";
@@ -393,14 +378,9 @@
 				0E422CBC2697905100804543 /* LaunchScreen.storyboard in Resources */,
 				0E96017A26AB59A5003D30DB /* ComicsTableViewCell.xib in Resources */,
 				0E422CB92697905100804543 /* Assets.xcassets in Resources */,
-				0E422CEF2697A5C300804543 /* cap.png in Resources */,
-				0E422CF02697A5C300804543 /* spiderman.png in Resources */,
-				0E422CF22697A5C300804543 /* thor.png in Resources */,
 				0E422CF92697BCBB00804543 /* fundo.jpg in Resources */,
 				0E422CB72697905000804543 /* Main.storyboard in Resources */,
 				0E96017226AB55BB003D30DB /* HeroDetailViewController.xib in Resources */,
-				0E422CF12697A5C300804543 /* hulk.png in Resources */,
-				0E422CF32697A5C300804543 /* viuva.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

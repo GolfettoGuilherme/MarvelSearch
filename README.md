@@ -15,10 +15,11 @@
   <a href="#rocket-começando">Começando</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
 </p>
 
-<!-- <h1 align="center">
-  <img alt="Home" src="https://res.cloudinary.com/matheuspires/image/upload/v1608076168/home_imjh7b.gif" width="400" />
-  <img alt="Pokedex" src="https://res.cloudinary.com/matheuspires/image/upload/v1608076006/pokemon_ismsal.gif" width="400" />
-</h1> -->
+<h1 align="center">
+  <img alt="Home" src="https://github.com/GolfettoGuilherme/MarvelSearch/blob/main/Marvel%20Search/Assets/home.png" width="400" />
+  <img alt="Search" src="https://github.com/GolfettoGuilherme/MarvelSearch/blob/main/Marvel%20Search/Assets/search.png" width="400" />
+  <img alt="Hero Description" src="https://github.com/GolfettoGuilherme/MarvelSearch/blob/main/Marvel%20Search/Assets/hero_description.png" width="400" />
+</h1>
 
 ## :page_with_curl: Sobre
 Este repositório contém um monorepo da aplicação Marvel Search.
@@ -55,4 +56,4 @@ Este projeto foi desenvolvido com as seguintes tecnologias:
 
 
 
-Feito com 😡 por Guilherme GOlfetto (Que odeia Marvel) 👋🏻 [Get in touch!](https://github.com/GolfettoGuilherme)
+Feito com 😡 por Guilherme Golfetto (Que odeia Marvel) 👋🏻 [Get in touch!](https://github.com/GolfettoGuilherme)
